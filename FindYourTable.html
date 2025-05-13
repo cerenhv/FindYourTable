@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Elif&Berkan Düğün Masa Sorgulama</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Düğün Masa Sorgulama</h1>
+  <p>Lütfen adınızı ve soyadınızı girin:</p>
+  <input type="text" id="guestName" placeholder="Ad Soyad">
+  <button onclick="findTable()">Sorgula</button>
+  <div id="result"></div>
+
+  <script>
+    const guestList = {
+      "Ceren Havaylar": "Masa 1",
+      "Erdoğan Havaylar": "Masa 1"
+      "Hediye Bilgili": "Masa 3",
+      "Ebru Gönen": "Masa 6"
+      // buraya istediğin kadar ekleme yapabilirsin
+    };
+
+    function findTable() {
+      const nameInput = document.getElementById("guestName").value.toLowerCase().trim();
+      const result = document.getElementById("result");
+
+      if (guestList[nameInput]) {
+        result.textContent = `${nameInput.toUpperCase()} ${guestList[nameInput]} numaralı masada oturuyor.`;
+      } else {
+        result.textContent = "Bu isim listede bulunamadı.";
+      }
+    }
+  </script>
+</body>
+</html>
