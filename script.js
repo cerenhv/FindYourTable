@@ -1,6 +1,6 @@
 const guestList = {
       "Ceren Havaylar": "Masa 1",
-      "Erdoğan Havaylar": "Masa 1"
+      "Erdoğan Havaylar": "Masa 1",
       "Hediye Bilgili": "Masa 3",
       "Ebru Gönen": "Masa 6"
 };
