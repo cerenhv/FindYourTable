@@ -38,9 +38,15 @@
     document.getElementById("sorgulaBtn").addEventListener("click", function findTable() {
       const nameInput = document.getElementById("guestName").value.toLowerCase().trim();
       const result = document.getElementById("result");
-
-      if (guestList[nameInput]) {
-        result.textContent = `${nameInput.toUpperCase()} → ${guestList[nameInput]} numaralı masada.`;
+    
+      const matches = Object.entries(guestList).filter(
+        ([guestName]) => guestName.toLowerCase().includes(nameInput)
+      );
+    
+      if (matches.length > 0) {
+        result.innerHTML = matches.map(
+          ([name, table]) => `👤 ${name} → ${table} numaralı masa`
+        ).join("<br>");
       } else {
         result.textContent = "⚠️ Bu isim listede bulunamadı.";
       }
