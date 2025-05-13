@@ -21,12 +21,30 @@
   </style>
 </head>
 <body>
-  <h1>Düğün Masa Sorgulama</h1>
+  <h1>Elif&Berkan Düğün Masa Sorgulama</h1>
   <p>Lütfen adınızı ve soyadınızı girin:</p>
   <input type="text" id="guestName" placeholder="Ad Soyad">
-  <button onclick="findTable()">Sorgula</button>
+  <button id="sorgulaBtn">Sorgula</button>
   <div id="result"></div>
 
-  <script src="script.js" defer></script>
+  <script>
+    const guestList = {
+      "Ceren Havaylar": "Masa 1",
+      "Erdoğan Havaylar": "Masa 1"
+      "Hediye Bilgili": "Masa 3",
+      "Ebru Gönen": "Masa 6"
+    };
+
+    document.getElementById("sorgulaBtn").addEventListener("click", function findTable() {
+      const nameInput = document.getElementById("guestName").value.toLowerCase().trim();
+      const result = document.getElementById("result");
+
+      if (guestList[nameInput]) {
+        result.textContent = `${nameInput.toUpperCase()} → ${guestList[nameInput]} numaralı masada.`;
+      } else {
+        result.textContent = "⚠️ Bu isim listede bulunamadı.";
+      }
+    });
+  </script>
 </body>
 </html>
