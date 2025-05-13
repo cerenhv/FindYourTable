@@ -29,10 +29,11 @@
 
   <script>
     const guestList = {
-      "Ceren Havaylar": "Masa 1",
-      "Erdoğan Havaylar": "Masa 1",
-      "Hediye Bilgili": "Masa 3",
-      "Ebru Gönen": "Masa 6"
+      "Ceren Havaylar": "1",
+      "Erdoğan Havaylar": "1",
+      "Hediye Bilgili": "3",
+      "Ebru Gönen": "6",
+      "Ceren Test": "5"
     };
 
     document.getElementById("sorgulaBtn").addEventListener("click", function findTable() {
@@ -45,7 +46,7 @@
     
       if (matches.length > 0) {
         result.innerHTML = matches.map(
-          ([name, table]) => `👤 ${name} → ${table} numaralı masa`
+          ([name, table]) => `👤 ${name} → ${table} numaralı masada oturuyor.`
         ).join("<br>");
       } else {
         result.textContent = "⚠️ Bu isim listede bulunamadı.";
