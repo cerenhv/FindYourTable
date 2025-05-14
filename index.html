@@ -59,16 +59,8 @@
     <img id="seatingPlan" src="seatingPlan.png" alt="Oturma Planı" style="max-width: 100%; height: auto;">
   </div>
 
-
+  <script src="guestList.js"></script>
   <script>
-    const guestList = {
-      "Ceren Havaylar": "Yuvarlak - 1",
-      "Erdoğan Havaylar": "Yuvarlak - 1",
-      "Hediye Bilgili": "Yuvarlak - 3",
-      "Ebru Gönen": "Yuvarlak - 6",
-      "Ceren Test": "Dikdörtgen - 4"
-    };
-
     document.getElementById("sorgulaBtn").addEventListener("click", function findTable() {
       const nameInput = document.getElementById("guestName").value.toLowerCase().trim();
       const result = document.getElementById("result");
