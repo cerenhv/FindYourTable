@@ -60,23 +60,9 @@
   </div>
 
   <script src="guestList.js"></script>
+  <script src="findTable.js"></script>
   <script>
-    document.getElementById("sorgulaBtn").addEventListener("click", function findTable() {
-      const nameInput = document.getElementById("guestName").value.toLowerCase().trim();
-      const result = document.getElementById("result");
-    
-      const matches = Object.entries(guestList).filter(
-        ([guestName]) => guestName.toLowerCase().includes(nameInput)
-      );
-    
-      if (matches.length > 0) {
-        result.innerHTML = matches.map(
-          ([name, table]) => `👤 ${name} → ${table} numaralı masada oturuyor.`
-        ).join("<br>");
-      } else {
-        result.textContent = "⚠️ Bu isim listede bulunamadı.";
-      }
-    });
+    document.getElementById("sorgulaBtn").addEventListener("click", function findTable());
   </script>
 
   <script>
